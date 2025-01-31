@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "Contoso Airlines Pet API",
-    "version": "1.0.0",
+    "version": "v1.0.0",
     "description": "API for retrieving available pets for adoption at airports.",
     "contact": {
       "name": "Contoso Airlines",
