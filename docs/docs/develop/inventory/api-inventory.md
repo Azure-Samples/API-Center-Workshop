@@ -36,6 +36,6 @@ az apic create --name contoso-air --resource-group rg-apic-workshop --location w
 ```
 ![Create an API Center instance](/img/create-apic-cli.jpg)
 
-If you open the API Center extension again, you will see your newly created instance with a sample Petstore API.+
+If you open the API Center extension again, you will see your newly created instance with a sample Petstore API.
 
 ![API Center instance created](/img/swagger-petstore.jpg)
