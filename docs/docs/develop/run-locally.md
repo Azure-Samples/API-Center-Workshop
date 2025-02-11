@@ -1,5 +1,14 @@
 # Run in Local Environment
 
+First, let us run the application in a local environment. This will help us understand how the application works and how the different components interact with each other.
+
+:::tip[Note]
+
+Jump to the **'Start the APIs'** section if you are running in a Codespace.
+
+:::
+
+
 Fork the repository and clone it to your local machine. 
 
 ```bash

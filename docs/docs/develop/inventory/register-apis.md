@@ -1,6 +1,6 @@
-# Import APIs
+# Register your APIs
 
-At this point, your APIs are deployed at different deployment locations on Azure. We now want to import the APIs into your API Center instance to create a centralized inventory of your APIs across the organization. 
+After creating your API Center, the next step is to start registering your APIs to build a centralized inventory. For each API, you will also add an API version with an API definition. 
 
 ## 1. Service API
 

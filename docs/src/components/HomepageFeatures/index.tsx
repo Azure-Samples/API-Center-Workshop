@@ -20,7 +20,7 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: 'Govern',
+    title: 'Governance',
     Svg: require('@site/static/img/inventory.svg').default,
     description: (
       <>
@@ -29,7 +29,7 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: 'Discover & Consume',
+    title: 'Discovery & Consumption',
     Svg: require('@site/static/img/inventory.svg').default,
     description: (
       <>

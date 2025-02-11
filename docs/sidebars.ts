@@ -39,9 +39,11 @@ const sidebars: SidebarsConfig = {
         type: 'category',
         label: 'API Inventory',
         items: [
+          'develop/inventory/generate-openapi',
           'develop/inventory/api-inventory',
           'develop/inventory/custom-metadata',
-          'develop/inventory/import-apis',]
+          'develop/inventory/register-apis',
+          'develop/inventory/env-and-deploys']
       },
       {
         type: 'category',
