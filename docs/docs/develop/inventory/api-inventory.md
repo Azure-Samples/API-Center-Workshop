@@ -1,41 +1,35 @@
-# Build an API Inventory
-
-
-## Create an Azure API Center instance
+# Create an API Center Service
 
 :::tip[Note]
 
-This step uses the Azure API Center VS Code extension. If you haven't installed it yet, you can download it from [here](https://marketplace.visualstudio.com/items?itemName=AzureAPICenter.apicenter).
+This step uses the Azure API Center VS Code extension. If you haven't installed it yet, you can download it from [here](https://marketplace.visualstudio.com/items?itemName=AzureAPICenter.apicenter). Ensure you install and **switch to the Pre-Release** version for this workshop.
 
 :::
 
+Click on the **Extensions** icon in the side bar, and type 'api center' in the search textbox. Click on the Azure API Center extension and click Install **Install Pre-Release/ Install**
 ![API Center VS Code Extension](/img/apic-vscode-extension.jpg)
 
-Click on the API center icon on the side bar and sign in to your Azure account
+Once installed, click on the API Center icon on the side bar to sign in to your Azure account.
 
-![Sign in to Azure via API Center Extension](/img/apic-signin-vscode.png)
+![Sign in to Azure via API Center Extension](/img/apic-signin-vscode.jpg)
 
-[TODO: Add better image]
+Before you start using API Center, you need to check on the following in your subscription:
+1. Ensure you at least have a _Contributor Role Assignment_
+    - Log in to the Azure CLI (az) usin `az login`
+    - Run `az role assignment list --assignee USER-ID --scope /subscriptions/SUBSCRIPTION-ID` to confirm your role assignments scoped to your subscription. _Replace USER-ID with your User Object ID and SUBSCRIPTION-ID with your subscription ID._
+1. Register the _Microsoft.ApiCenter_ resource provider
+    - To register your resource provider, run `az provider register --namespace Microsoft.ApiCenter`
 
-Open your terminal, and sign in to your Azure account.
+Now, let's create an Azure API Center service in your subscription. You can create one directly on the Azure Portal, but we will load and use the **apic-extension** from the Azure CLI by running `az apic create --name APIC-NAME --resource-group RG-NAME --location LOCATION`
 
-```bash    
-az login
-```
+:::tip[Note]
 
-Register the Microsoft.ApiCenter resource provider in your subscription. You only need to register the resource provider only once, and you can do this by running the command below:
+Remember to replace _RG-NAME_ with the name of your resource-group. We'll use **contoso-airlines** as the _APIC-NAME_ and create it in **westeurope**
 
-```bash
-az provider register --namespace Microsoft.ApiCenter
-```
+:::
 
-Create an API Center instance by running the following command:
-
-```bash
-az apic create --name contoso-air --resource-group rg-apic-workshop --location westeurope
-```
-![Create an API Center instance](/img/create-apic-cli.jpg)
-
-If you open the API Center extension again, you will see your newly created instance with a sample Petstore API.
+If you click on the API Center extension again, and refresh, you will see your newly created API Center service. Once you expand the service, you will see a sample API, _Swagger Petstore_, created by default.
 
 ![API Center instance created](/img/swagger-petstore.jpg)
+
+Next, we'll define some custom metadata properties to help organize our APIs.

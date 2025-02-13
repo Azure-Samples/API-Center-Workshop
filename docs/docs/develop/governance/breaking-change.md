@@ -1,7 +1,5 @@
 # Detect Breaking Changes
 
-_Persona: **API Developer**_
-
 Deploying APIs is a continuous process, and as APIs evolve, they may introduce breaking changes that can impact consumers. It is essential to detect these breaking changes early in the API lifecycle to avoid disruptions to consumers and ensure a seamless transition to the new API version.
 
 The Azure API Center extension for Visual Studio Code provides a feature to easily detect breaking changes between different versions of an OpenAPI specification documents.
@@ -17,4 +15,4 @@ The breaking change detection feature uses [Optic](https://github.com/opticdev/o
 
 Once you've selected the two files, Optic will analyze the changes and provide a diff view highlighting the breaking changes between the two versions. You can review the changes and take necessary actions to address the breaking changes before deploying the new API version.
 
-[TODO: Add screenshot of breaking change detection in VS Code]
+![Breaking changes](/img/breaking-changes.png)

@@ -33,13 +33,12 @@ const sidebars: SidebarsConfig = {
      label: 'Develop',
      items: [
       'develop/setup',
-      'develop/run-locally',
+      // 'develop/run-locally',
       'develop/deploy',
       {
         type: 'category',
         label: 'API Inventory',
         items: [
-          'develop/inventory/generate-openapi',
           'develop/inventory/api-inventory',
           'develop/inventory/custom-metadata',
           'develop/inventory/register-apis',
@@ -50,8 +49,7 @@ const sidebars: SidebarsConfig = {
         label: 'API Governance',
         items: [
           'develop/governance/api-design',
-          'develop/governance/breaking-change',
-          'develop/governance/metadata-governance']
+          'develop/governance/breaking-change']
       },
       {
         type: 'category',

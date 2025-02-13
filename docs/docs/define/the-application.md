@@ -1,6 +1,10 @@
 # The Application 
 
-Contoso Airlines is a fictional airline company that offers a variety of services to its customers. The company has a client application that allows users to view available flights, select a pet travel companion, and place an order to adopt a pet. The company also offers holiday packages and ideas to its customers.
+**Contoso Airlines** is a fictional airline company that offers a variety of services to its customers.
+
+![Contoso Airlines Homepage](/img/website.jpg)
+
+ The company has a client application that allows users to view available flights, select a pet travel companion, and place an order to adopt a pet. The company also offers holiday packages and ideas to its customers.
 
 ## Roles
 

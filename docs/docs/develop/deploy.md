@@ -1,5 +1,7 @@
 # Deploy to Azure
 
+[TODO]: Add azd
+
 ## 1. Deploy Service API to Azure App Service
 
 Install the [App Service extension in Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice) to deploy the services API to Azure App Service. Once the extension is installed, click on the Azure icon in the Activity Bar, then select your subscription. Right-click on 'App Services' and select 'Create New Web App ... (Advanced)', then fill in the following:-

@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # About this workshop
 
-This flash workshop gives you a comprehensive understanding of how to enhance the API management and governance strategies in your organization. You will gain valuable insights into the capabilities of the Azure API Center, which is a structured inventory for tracking all your APIs, enhancing discoverability, development, and reuse regardless of their type, lifecycle stage or deployment location. This knowledge will empower you to streamline secure API integration, enforcing security and compliance with tools that evolve to meet your growing business needs.
+This flash workshop gives you a comprehensive understanding of how to enhance the API management and governance strategies in your organization. You will gain valuable insights into the capabilities of Azure API Center, which is a structured inventory for tracking all your organizational APIs, enhancing discoverability, development, and reuse regardless of their type, lifecycle stage or deployment location. This knowledge will empower you to streamline secure API integration, enforcing security and compliance with tools that evolve to meet your growing business needs.
 
 ## Background
 

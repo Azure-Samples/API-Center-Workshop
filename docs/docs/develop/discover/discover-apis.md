@@ -1,7 +1,5 @@
 # Discover all APIs
 
-_Persona: **API Developer**_
-
 Once logged in to your Azure account, you can discover APIs from the Azure API Center directly in Visual Studio Code. Open the extension by clicking on the Azure API Center icon in the sidebar.
 
 Here, you will see a tree view of all the APIs available in your organization. Next to the title `APIs`, you will see a Search icon, which you can click on to search for specific APIs.
@@ -22,4 +20,4 @@ _Persona: **API Platform Engineer**_
 
 On the Azure portal, an API Platform Engineer/ Administrator can also discover all organizational APIs, and perform filtering and sorting based on various criteria. 
 
-![Discover APIs on Azure portal](/img/view-apis-portal.jpg)
+![Discover APIs on Azure portal](/img/manage-apis-through-properties.gif)

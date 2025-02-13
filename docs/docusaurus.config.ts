@@ -5,12 +5,12 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'Empowering Your API Strategy with Azure API Center ',
+  title: 'Empower Your API Strategy with Azure API Center ',
   tagline: 'Streamline API Development, Governance, Discovery & Consumption with API Center',
   favicon: 'img/logo.svg',
 
   // Set the production url of your site here
-  url: 'https://API-Center-Workshop.com',
+  url: 'https://jolly-river-01b9b5803.4.azurestaticapps.net/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -19,7 +19,8 @@ const config: Config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'juliamuiruri4', // Usually your GitHub org/user name.
   projectName: 'API-Center-Workshop', // Usually your repo name.
-
+  deploymentBranch: 'gh-pages',
+  trailingSlash: false,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
@@ -42,21 +43,7 @@ const config: Config = {
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -97,7 +84,7 @@ const config: Config = {
         width: 160,
         height: 51,
       },
-      copyright: `Copyright © ${new Date().getFullYear()} Microsoft - Made with ♥️ by API Center Team & JS Advocacy`,
+      copyright: `Copyright © ${new Date().getFullYear()} Microsoft - Made with ♥️ by API Center Team & JavaScript Advocacy`,
       links: [],
     },
     prism: {
