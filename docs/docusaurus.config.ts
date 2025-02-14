@@ -8,15 +8,8 @@ const config: Config = {
   title: 'Empower Your API Strategy with Azure API Center ',
   tagline: 'Streamline API Development, Governance, Discovery & Consumption with API Center',
   favicon: 'img/logo.svg',
-
-  // Set the production url of your site here
-  url: 'https://jolly-river-01b9b5803.4.azurestaticapps.net/',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
+  url: 'https://juliamuiruri4.github.io',
+  baseUrl: '/API-Center-Workshop',
   organizationName: 'juliamuiruri4', // Usually your GitHub org/user name.
   projectName: 'API-Center-Workshop', // Usually your repo name.
   deploymentBranch: 'gh-pages',
