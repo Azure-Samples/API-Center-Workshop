@@ -21,7 +21,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Governance',
-    Svg: require('@site/static/img/inventory.svg').default,
+    Svg: require('@site/static/img/governance.svg').default,
     description: (
       <>
        Now, with a complete API inventory, we need to look into how we can ensure these APIs are consistent, standardized, usable, and secure.
@@ -30,7 +30,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Discovery & Consumption',
-    Svg: require('@site/static/img/inventory.svg').default,
+    Svg: require('@site/static/img/consumption.svg').default,
     description: (
       <>
         API consumers can discover, try, and consume APIs directly inside Visual Studio Code or through a self-hosted web-based API Center portal.

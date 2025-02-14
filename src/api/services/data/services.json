@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Luxury Flights",
+    "description": "Experience unmatched comfort and luxury during your flights.",
+    "image": "https://images.unsplash.com/photo-1592985684811-6c0f98adb014?q=80&w=2344&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "id": 2,
+    "title": "Affordable Fares",
+    "description": "Fly to your destination without breaking the bank.",
+    "image": "https://images.unsplash.com/photo-1604594849809-dfedbc827105?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "id": 3,
+    "title": "In-flight Dining",
+    "description": "Enjoy delicious meals and beverages on board.",
+    "image": "https://images.unsplash.com/photo-1606380588846-8af6f746f441?q=80&w=2488&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "id": 4,
+    "title": "Premium Lounges",
+    "description": "Relax and unwind in our exclusive airport lounges.",
+    "image": "https://plus.unsplash.com/premium_photo-1733760125597-50af3d179538?q=80&w=2342&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "id": 5,
+    "title": "24/7 Support",
+    "description": "Get assistance anytime, anywhere with our customer support.",
+    "image": "https://images.unsplash.com/photo-1553775282-20af80779df7?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "id": 6,
+    "title": "Global Destinations",
+    "description": "Explore the world with our extensive network of destinations.",
+    "image": "https://images.unsplash.com/photo-1521295121783-8a321d551ad2?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  }
+]

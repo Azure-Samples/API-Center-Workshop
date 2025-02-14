@@ -1,0 +1,445 @@
+:root {
+    --primary-dark: #1a0033;
+    --primary: #2b0066;
+    --primary-light: #3700b3;
+    --accent: #6200ee;
+    --text-light: #ffffff;
+    --text-dark: #1f1f1f;
+    --card-bg: #ffffff;
+    --shadow: rgba(0, 0, 0, 0.2);
+}
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+footer {
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+main {
+    padding: 2rem;
+}
+
+/* Header Section */
+header {
+    position: relative;
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+    min-height: 80px; /* Reduced height */
+    padding: 1.5rem 2rem; /* Adjusted padding */
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--accent) 100%);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-text {
+    text-align: left;
+    flex: 1;
+}
+
+.sign-in-btn {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    margin-left: 2rem;
+}
+
+.sign-in-btn:hover {
+    background: var(--text-light);
+    color: var(--primary-dark);
+}
+
+header h1 {
+    font-size: 2rem;
+    margin: 0 0 0.5rem 0;
+    letter-spacing: 1px;
+}
+
+header h6 {
+    font-size: 0.9rem;
+    margin: 0 0 0.5rem 0;
+}
+
+header p {
+    margin: 0;
+    line-height: 1.4;
+    font-size: 0.8rem;
+    max-width: 600px;
+}
+
+/* About Section */
+.hero {
+    background: url('../assets/hero.jpeg') center/cover no-repeat;
+    color: white;
+    text-align:center;
+    padding: 3rem 1rem;
+    height: 350px;
+}
+
+.about-content {
+    margin-top: 1rem;
+}
+
+/* Destinations Section */
+#destinations {
+    margin-top: 2rem;
+}
+
+.destinations-content {
+    display: flex;
+    gap: 2rem;
+}
+
+.carousel {
+    flex: 1;
+    position: relative;
+}
+
+.carousel img {
+    width: 100%;
+    display: none;
+    border-radius: 5px;
+}
+
+.carousel img.active {
+    display: block;
+}
+
+.description {
+    flex: 1;
+}
+
+/* Services Section */
+#services {
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#services h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+#services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.service-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px var(--shadow);
+    border: 1px solid var(--primary-light);
+}
+
+.service-card h2 {
+    color: var(--primary);
+    font-size: 1rem;
+    margin: 1rem 0;
+}
+
+.service-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.service-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Section */
+footer {
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+    padding: 1rem 0;
+    border-top: 1px solid #ddd;
+}
+
+/* Pets Section */
+#travel-buddy {
+    padding: 2rem;
+    text-align: center;
+    margin: 0 auto;
+    overflow: hidden; /* Prevent horizontal scrollbar on the section */
+}
+
+#travel-buddy h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.pets-grid {
+    display: flex;
+    gap: 1.5rem;
+    margin: 2rem auto;
+    padding: 0.5rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    max-width: 100%;
+}
+
+.pet-card {
+    flex: 0 0 280px; /* Fixed width, no growing or shrinking */
+    min-width: 280px; /* Ensure minimum width */
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 3px 10px var(--shadow);
+    padding: 1.25rem;
+    transition: all 0.3s ease;
+}
+
+.pet-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px var(--shadow);
+    border: 1px solid var(--primary-light);
+}
+
+.pet-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.pet-species {
+    color: #666;
+    font-style: italic;
+    margin: 0.5rem 0;
+}
+
+.pet-description {
+    margin: 0.75rem 0;
+    line-height: 1.4;
+    color: #444;
+}
+
+.pet-location {
+    color: var(--accent);
+    font-weight: bold;
+    margin-top: auto;
+    padding-top: 0.5rem;
+}
+
+/* Custom scrollbar styling */
+.pets-grid::-webkit-scrollbar {
+    height: 6px;
+}
+
+.pets-grid::-webkit-scrollbar-track {
+    background: var(--primary-dark);
+    opacity: 0.3;
+    border-radius: 3px;
+}
+
+.pets-grid::-webkit-scrollbar-thumb {
+    background: var(--primary-light);
+    border-radius: 3px;
+}
+
+.pets-grid::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+}
+
+/* Remove the media queries for pets-grid as they're no longer needed */
+/* Delete or comment out all @media queries related to .pets-grid */
+
+/* Flight Search Section */
+#flights {
+    background-color: #fff;
+    padding: 2rem;
+    box-shadow: 0 4px 8px var(--shadow);
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+#flights-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#flights-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#flights-container .flight-type-container {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+#flights-container .form-fields {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+
+#flights-container .form-fields > div {
+    flex: 1 1 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+#flights-container label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+#flights-container select,
+#flights-container input[type="date"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#flights-container input[type="date"]:disabled {
+    background-color: #f5f5f5;
+    color: #999;
+}
+
+#flights-container button[type="submit"] {
+    background-color: var(--primary);
+    color: var(--text-light);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+}
+
+#flights-container button[type="submit"]:hover {
+    background-color: var(--primary-light);
+}
+
+#flights-container div {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+#flights-container div label {
+    margin: 0;
+}
+
+/* Pop-Up Modal Styles */
+.pop-up {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.pop-up .results-container {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 4px 8px var(--shadow);
+    text-align: center;
+}
+
+.pop-up .close-button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: var(--primary);
+    color: var(--text-light);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pop-up .close-button:hover {
+    background-color: var(--primary-light);
+}
+
+/* New styles for flight results in pop-up */
+.flight-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.flight-card h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--primary);
+}
+
+.flight-details {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.flight-details li {
+    margin-bottom: 0.5rem;
+}
+
+.alternative-dates {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0 0;
+}
+
+.alternative-dates li {
+    margin-bottom: 0.3rem;
+}

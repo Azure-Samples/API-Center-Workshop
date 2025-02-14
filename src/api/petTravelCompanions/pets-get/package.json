@@ -1,0 +1,24 @@
+{
+  "name": "pets-get",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "tsc & cp src/pets.json dist/pets.json",
+    "watch": "tsc -w",
+    "clean": "rimraf dist",
+    "prestart": "npm run clean && npm run build",
+    "start": "func start",
+    "test": "echo \"No tests yet...\""
+  },
+  "dependencies": {
+    "@apvee/azure-functions-openapi": "^1.0.0",
+    "@azure/functions": "^4.0.0",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.x",
+    "rimraf": "^5.0.0",
+    "typescript": "^4.0.0"
+  },
+  "main": "dist/src/{index.js,functions/*.js}"
+}

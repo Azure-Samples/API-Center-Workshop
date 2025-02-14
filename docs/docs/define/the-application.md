@@ -4,27 +4,21 @@
 
 ![Contoso Airlines Homepage](/img/website.jpg)
 
- The company has a client application that allows users to view available flights, select a pet travel companion, and place an order to adopt a pet. The company also offers holiday packages and ideas to its customers.
+ The company has a client application that allows users to view available flights, select a pet travel companion, and place an order to adopt a pet post-flight. 
 
 ## Roles
 
 ![Contoso Airlines Roles](/img/contoso-roles.png)
 
-- **API Platform Engineer.** Designs and maintains the infrastructure and tools that enable contoso developers to efficiently create, deploy, and manage APIs
-- **Core Engineering team.** Software engineers who build and maintain APIs related to the companies services and users
-- **Partner management team**. Software engineers who build and maintain APIs related to contoso's partners
-- **Pet Adoption Agency.** A partner that provides a service to adopt pets
+### User Experiences & Responsibilities
 
-## User Experiences & Responsibilities
+**API Producers**
+- _Team A:_ Designs, builds and manages the Services API.
+- _Team B:_ Designs, builds and manages the Flights API.
+- _Team C:_ Designs, builds and manages the Pets Travel Companions and Adoption APIs.
 
-### API Platform Engineer
+**API Platform Engineer/ Admin**
+- Manages all underlying API infrastructure, enforcing organizational compliance & API design standard policies across all teams.
 
-_[Coming soon …]_
-
-### Core Team
-
-_[Coming soon …]_
-
-### Partner Management Team
-
-_[Coming soon …]_
+**API Consumers (App Developers)**
+- The core engineering team at Contoso Airlines responsible for building the company website.
