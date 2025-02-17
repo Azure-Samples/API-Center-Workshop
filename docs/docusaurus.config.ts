@@ -9,7 +9,7 @@ const config: Config = {
   tagline: 'Streamline API Development, Governance, Discovery & Consumption with API Center',
   favicon: 'img/logo.svg',
   url: 'https://juliamuiruri4.github.io',
-  baseUrl: '/API-Center-Workshop',
+  baseUrl: '/',
   organizationName: 'juliamuiruri4', // Usually your GitHub org/user name.
   projectName: 'API-Center-Workshop', // Usually your repo name.
   deploymentBranch: 'gh-pages',
