@@ -20,11 +20,11 @@ services:
         project: src/api/services
         host: appservice
         language: js
-    # website:
-    #     project: ./src/client
-    #     dist: ./
-    #     host: staticwebapp
-    #     language: js
+    website:
+        project: ./src/client
+        dist: ./
+        host: staticwebapp
+        language: js
 
 hooks:
   prepackage: 
