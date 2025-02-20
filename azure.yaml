@@ -1,0 +1,37 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
+
+name: api-center-workshop
+metadata:
+    template: azd-init@1.11.0
+services:
+    # flights-api:
+    #     project: src/api/flights
+    #     host: containerapp
+    #     language: js
+    #     docker:
+    #         remoteBuild: false
+    #         path: Dockerfile
+    #         registry: "docker.io"
+    petsapi:
+        project: src/api/petTravelCompanions
+        host: function
+        language: ts
+    serviceapi:
+        project: src/api/services
+        host: appservice
+        language: js
+    # website:
+    #     project: ./src/client
+    #     dist: ./
+    #     host: staticwebapp
+    #     language: js
+
+hooks:
+  prepackage: 
+   windows:
+     shell: pwsh
+     run: cd src/api/services && npm ci
+   posix:
+     shell: sh 
+     run: cd src/api/services && npm ci
+
