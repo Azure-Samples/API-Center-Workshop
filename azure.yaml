@@ -4,14 +4,15 @@ name: api-center-workshop
 metadata:
     template: azd-init@1.11.0
 services:
-    # flights-api:
-    #     project: src/api/flights
-    #     host: containerapp
-    #     language: js
-    #     docker:
-    #         remoteBuild: false
-    #         path: Dockerfile
-    #         registry: "docker.io"
+    flightsapi:
+        project: src/api/flights
+        host: containerapp
+        language: js
+        docker:
+            remoteBuild: false
+            path: Dockerfile
+            registry: "docker.io"
+            image: 'juliamuiruri4/contoso-air-flights'
     petsapi:
         project: src/api/petTravelCompanions
         host: function
@@ -28,10 +29,11 @@ services:
 
 hooks:
   prepackage: 
-   windows:
-     shell: pwsh
-     run: cd src/api/services && npm ci
-   posix:
-     shell: sh 
-     run: cd src/api/services && npm ci
+      - shell: pwsh
+        run: cd src/api/services && npm ci
+      - shell: pwsh
+        run: cd src/api/petTravelCompanions && npm ci
 
+  postprovision: 
+    - shell: pwsh
+      run: azd env get-values > src/api/.env

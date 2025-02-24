@@ -14,6 +14,7 @@ param location string
 param staticWebAppName string = 'website'
 param appServiceName string = 'serviceapi'
 param functionAppName string = 'petsapi'
+param containerName string = 'flightsapi'
 
 @description('Id of the user or app to assign application roles')
 param principalId string = ''
@@ -77,6 +78,10 @@ module appservice 'br/public:avm/res/web/site:0.13.3' = {
     tags: union(tags, { 'azd-service-name': appServiceName })
     kind: 'app,linux'
     name: serviceApiResourceName
+    siteConfig: {
+      alwaysOn: true
+      linuxFxVersion: 'Node|20-lts'
+    }
     serverFarmResourceId: appServicePlan.outputs.resourceId
   }
 }
@@ -101,24 +106,24 @@ module function 'br/public:avm/res/web/site:0.13.0' = {
   params: {
     tags: union(tags, { 'azd-service-name': functionAppName })
     location: location
-    kind: 'functionapp'
+    kind: 'functionapp,linux'
     name: petsApiResourceName
     serverFarmResourceId: appServicePlan.outputs.resourceId
     managedIdentities: { systemAssigned: true }
     siteConfig: {
       minTlsVersion: '1.2'
       ftpsState: 'FtpsOnly'
+      linuxFxVersion: 'node|20'
     }
     appSettingsKeyValuePairs: {
-      AzureFunctionsJobHost__logging__logLevel__default: 'Trace'
       FUNCTIONS_EXTENSION_VERSION: '~4'
       FUNCTIONS_WORKER_RUNTIME: 'node'
     }
     storageAccountResourceId: storage.outputs.resourceId
-    storageAccountUseIdentityAuthentication: true
   }
 }
 
+// ✅ Azure Storage Account
 module storage 'br/public:avm/res/storage/storage-account:0.15.0' = {
   name: 'storage'
   scope: rg
@@ -149,6 +154,50 @@ module storage 'br/public:avm/res/storage/storage-account:0.15.0' = {
   }
 }
 
+// ✅ Azure Container Apps
+module containerApp 'br/public:avm/res/app/container-app:0.13.0' = {
+  name: 'flightsapi'
+  scope:rg
+  params: {
+    // Required parameters
+    containers: [
+      {
+        image: 'docker.io/juliamuiruri4/contoso-air-flights:latest'
+        name: 'contoso-air-flights'
+        resources: {
+          cpu: '0.25'
+          memory: '0.5Gi'
+        }
+      }
+    ]
+    tags: union(tags, { 'azd-service-name': containerName })
+    environmentResourceId: managedEnvironment.outputs.resourceId
+    name: 'flightsapi-container'
+  }
+}
+
+// ✅ Managed environment
+module managedEnvironment 'br/public:avm/res/app/managed-environment:0.9.0' = {
+  name: 'managedEnvironmentDeployment'
+  scope:rg
+  params: {
+    // Required parameters
+    logAnalyticsWorkspaceResourceId: workspace.outputs.resourceId
+    name: 'environmentName'
+    zoneRedundant: false
+  }
+}
+
+// ✅ Log Analytics Workspace
+module workspace 'br/public:avm/res/operational-insights/workspace:0.11.0' = {
+  name: 'workspaceDeployment'
+  scope:rg
+  params: {
+    // Required parameters
+    name: 'logAnalyticsWorkspace'
+  }
+}
+
 // ---------------------------------------------------------------------------
 // System roles assignation
 
@@ -167,8 +216,13 @@ output AZURE_LOCATION string = location
 output AZURE_TENANT_ID string = tenant().tenantId
 output AZURE_RESOURCE_GROUP string = rg.name
 
+// Static Web App URL
 output WEBSITE_URL string = site.outputs.defaultHostname
+// App Service URL
 output WEBAPP_URL string = appservice.outputs.defaultHostname
+// Function App URL
 output FUNCTIONAPP_URL string = function.outputs.defaultHostname
+// Container App URL
+output CONTAINERAPP_URL string = containerApp.outputs.fqdn
 
 

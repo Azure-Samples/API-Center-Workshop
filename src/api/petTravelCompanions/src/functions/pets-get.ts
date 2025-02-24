@@ -96,56 +96,64 @@ export async function petsGet(request: HttpRequest, context: InvocationContext):
     }
 }
 
-// Register function with swagger docs
-registerFunction(
-    'petsGet',
-    'Get all pets', {
-    handler: petsGet,
+// define the http trigger for the function
+app.http('pets-get', {
+    route: 'api/pets-get',
     methods: ['GET'],
     authLevel: 'anonymous',
-    tags: ['Pets'],
-    description: 'Get a list of pets available for adoption at airports.',
-    operationId: 'petsGet',
-    route: 'pets-get',
-    azureFuntionRoutePrefix: 'api',
-    parameters: [],
-    responses: {
-        200: {
-            description: 'Success',
-            content: {
-                'application/json': {
-                    schema: {
-                        type: 'array',
-                        items: {
-                            type: 'array',
-                            properties: {
-                                id: { type: 'number' },
-                                name: { type: 'string' },
-                                species: { type: 'string' },
-                                age: { type: 'number' },
-                                description: { type: 'string' },
-                                image: { type: 'string' },
-                                airport_code: { type: 'string' }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        500: {
-            description: 'Internal Server Error',
-            content: {
-                'application/json': {
-                    schema: {
-                        type: 'object',
-                        properties: {
-                            error: { type: 'string' }
-                        }
-                    }
-                }
-            }
-        }
-    }
-});
+    handler: petsGet
+})
+
+// Register function with swagger docs
+// registerFunction(
+//     'petsGet',
+//     'Get all pets', {
+//     handler: petsGet,
+//     methods: ['GET'],
+//     authLevel: 'anonymous',
+//     tags: ['Pets'],
+//     description: 'Get a list of pets available for adoption at airports.',
+//     operationId: 'petsGet',
+//     route: 'pets-get',
+//     azureFuntionRoutePrefix: 'api',
+//     parameters: [],
+//     responses: {
+//         200: {
+//             description: 'Success',
+//             content: {
+//                 'application/json': {
+//                     schema: {
+//                         type: 'array',
+//                         items: {
+//                             type: 'array',
+//                             properties: {
+//                                 id: { type: 'number' },
+//                                 name: { type: 'string' },
+//                                 species: { type: 'string' },
+//                                 age: { type: 'number' },
+//                                 description: { type: 'string' },
+//                                 image: { type: 'string' },
+//                                 airport_code: { type: 'string' }
+//                             }
+//                         }
+//                     }
+//                 }
+//             }
+//         },
+//         500: {
+//             description: 'Internal Server Error',
+//             content: {
+//                 'application/json': {
+//                     schema: {
+//                         type: 'object',
+//                         properties: {
+//                             error: { type: 'string' }
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// });
 
 
