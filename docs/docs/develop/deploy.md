@@ -1,44 +1,55 @@
 # Deploy to Azure
 
-[TODO]: Add azd
+To run this sample, you first need to provision the Azure resources needed and deploy the sample.
 
-## 1. Deploy Service API to Azure App Service
+Open a terminal and run the following command to download the project code:
 
-Install the [App Service extension in Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice) to deploy the services API to Azure App Service. Once the extension is installed, click on the Azure icon in the Activity Bar, then select your subscription. Right-click on 'App Services' and select 'Create New Web App ... (Advanced)', then fill in the following:-
+```shell
+azd init -t [TODO]
+```
 
-- Globally unique name for the web app: **contoso-airlines-services**
-- Create a new resource group: **rg-contoso-airlines**
-- Runtime stack: **Node 20 LTS**
-- OS: **Linux**
-- App Service plan: **Create new (contoso-airlines-service-plan)**
-- Application Insights: **Skip for now**
+:::tip[Note]
 
-Observe the 'Output' window in the terminal to see the deployment progress. Once the deployment is complete, you can click the provided link to your web app to view it in the browser.
+This command will initialize a git repository, so you do not need to clone this repository.
 
-![Create app service resource](/img/app-service-create.jpg)
+:::
 
-After creating the web app, the next step is to deploy the API. Right-click on the web app and select 'Deploy to Web App ...', then select the folder containing the API code. The extension will deploy the API to the web app.
+Login to your Azure account:
 
-After a few minutes, refresh your web app in the browser, and navigate to /services to view the services.
+```shell
+azd auth login
+```
 
-[TODO]: Update from local to deployed in code
+Create a new azd environment:
 
-## 2. Deploy Petcompanion API to Azure Functions
+```shell
+azd env new
+```
 
-Install the [Azure Functions extension in Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) to deploy the petcompanion API to Azure Functions. Once the extension is installed, click on the Azure icon in the Activity Bar, then select your subscription. Right-click on 'Function App' and select 'Create new Function App in Azure ... (Advanved)', then fill in the following:-
+Enter a name that will be used for the resource group.
+This will create a new folder in the `.azure` folder, and set it as the active environment for any calls to `azd` going forward.
 
-- Globally unique name for the function app: **contoso-airlines-petcompanion**
-- Hosting plan: **App Service Plan**
-- Location: **West Europe**
-- Runtime stack: **Node 20 LTS**
-- OS: **Linux**
-- Linux App Service plan: **contoso-airlines-service-plan**
-- Resource group: **rg-contoso-airlines**
-- Storage account: **Create new (contosoairlinespets)**
-- Application Insights: **Skip for now**
+Provision the infrastructure needed to run the application.
 
-Observe the 'Output' window in the terminal to see the deployment progress. Once the deployment is complete, you can click the provided link to your function app to view it in the browser.
+```shell
+azd provision
+```
 
-![Create function app resource](/img/azure-functions-create.jpg)
+:::tip[Important]
 
-The next step is to deploy the petcompanion API. Right-click on the function app and select 'Deploy to Function App ...', then select the folder containing the API code. The extension will deploy the API to the function app.
+This application specifically requires some environment variables to be available during the packaging phase. This is why we need to provision the infra first before packaging and deploying the app. In most cases, simply running 'azd up' will package, provision and deploy your apps.
+
+:::
+
+![azd provision output example](/img/azd-provision.png)
+
+Package and deploy the app to Azure:
+
+```shell
+azd package
+azd deploy
+```
+
+After the application has been successfully deployed you will see a few URLs printed to the console. Click on the `service website Endpoint` to interact with the website in your browser.
+
+![Website endpoint url example](/img/website-endpoint.png)
