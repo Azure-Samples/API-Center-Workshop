@@ -8,11 +8,10 @@ const config: Config = {
   title: 'Empower Your API Strategy with Azure API Center ',
   tagline: 'Streamline API Development, Governance, Discovery & Consumption with API Center',
   favicon: 'img/logo.svg',
-  url: 'https://juliamuiruri4.github.io',
+  url: 'https://Azure-Samples.github.io',
   baseUrl: '/',
-  organizationName: 'juliamuiruri4', // Usually your GitHub org/user name.
+  organizationName: 'Azure-Samples', // Usually your GitHub org/user name.
   projectName: 'API-Center-Workshop', // Usually your repo name.
-  deploymentBranch: 'gh-pages',
   trailingSlash: false,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -31,10 +30,6 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: false,
         theme: {
@@ -62,7 +57,7 @@ const config: Config = {
         },
         // {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/Azure-Samples/API-Center-Workshop',
           label: 'GitHub',
           position: 'right',
         },
