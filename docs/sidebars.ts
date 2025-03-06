@@ -42,7 +42,8 @@ const sidebars: SidebarsConfig = {
           'develop/inventory/api-inventory',
           'develop/inventory/custom-metadata',
           'develop/inventory/register-apis',
-          'develop/inventory/env-and-deploys']
+          'develop/inventory/env-and-deploys',
+          'develop/inventory/import-from-apim']
       },
       {
         type: 'category',
@@ -59,7 +60,13 @@ const sidebars: SidebarsConfig = {
           'develop/discover/http']
       }
       ]
-    }
+    },
+    {
+      type: 'category',
+      label: 'Dive Deeper',
+      items: [
+        'discover/get-started'],
+    },
   ],
    
 };

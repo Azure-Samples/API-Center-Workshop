@@ -56,19 +56,6 @@ resource rg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
   tags: tags
 }
 
-// ✅ Azure Static Web App - website
-module site 'br/public:avm/res/web/static-site:0.7.0' = {
-  name: 'webapp'
-  scope: rg
-  params: {
-    name: staticWebAppName
-    location: webappLocation
-    sku: 'Free'
-    tags: union(tags, { 'azd-service-name': staticWebAppName })
-    provider: 'Custom'
-  }
-}
-
 // ✅ Azure App Service - serviceapi
 module appservice 'br/public:avm/res/web/site:0.13.3' = {
   name: 'serviceapi'
@@ -99,6 +86,22 @@ module appServicePlan 'br/public:avm/res/web/serverfarm:0.4.1' = {
   }
 }
 
+// ✅ Azure Static Web App - website
+module site 'br/public:avm/res/web/static-site:0.7.0' = {
+  name: 'webapp'
+  scope: rg
+  params: {
+    name: staticWebAppName
+    location: webappLocation
+    sku: 'Standard'
+    tags: union(tags, { 'azd-service-name': staticWebAppName })
+    provider: 'Custom'
+    linkedBackend: {
+      resourceId: appservice.outputs.resourceId
+    }
+  }
+}
+
 // ✅ Azure Function - petsapi
 module function 'br/public:avm/res/web/site:0.13.0' = {
   name: 'petsapi'
@@ -111,6 +114,7 @@ module function 'br/public:avm/res/web/site:0.13.0' = {
     serverFarmResourceId: appServicePlan.outputs.resourceId
     managedIdentities: { systemAssigned: true }
     siteConfig: {
+      alwaysOn: true
       minTlsVersion: '1.2'
       ftpsState: 'FtpsOnly'
       linuxFxVersion: 'node|20'
@@ -120,6 +124,8 @@ module function 'br/public:avm/res/web/site:0.13.0' = {
       FUNCTIONS_WORKER_RUNTIME: 'node'
     }
     storageAccountResourceId: storage.outputs.resourceId
+    storageAccountUseIdentityAuthentication: true
+    httpsOnly: false
   }
 }
 
@@ -132,7 +138,8 @@ module storage 'br/public:avm/res/storage/storage-account:0.15.0' = {
     tags: tags
     location: location
     skuName: 'Standard_LRS'
-    allowSharedKeyAccess: false
+    allowBlobPublicAccess: true
+    allowSharedKeyAccess: true
     networkAcls: {
       defaultAction: 'Deny'
       bypass: 'AzureServices'

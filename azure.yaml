@@ -28,12 +28,31 @@ services:
         language: js
 
 hooks:
-  prepackage: 
-      - shell: pwsh
-        run: cd src/api/services && npm ci
-      - shell: pwsh
-        run: cd src/api/petTravelCompanions && npm ci
-
   postprovision: 
-    - shell: pwsh
-      run: azd env get-values > src/api/.env
+    windows:
+      shell: pwsh
+      run: |
+        azd env get-values > src/api/services/.env
+        azd env get-values > src/api/petTravelCompanions/.env
+        azd env get-values > src/api/flights/.env
+    posix:
+      shell: sh
+      run: |
+        azd env get-values > src/api/services/.env
+        azd env get-values > src/api/petTravelCompanions/.env
+        azd env get-values > src/api/flights/.env
+    interactive: true
+    continueOnError: false
+  prepackage:
+    windows: 
+      shell: pwsh
+      run: |
+        cd src/api/services && npm install && npm run
+        cd ../../api/petTravelCompanions && npm install
+        cd ../../api/flights && npm install
+    posix: 
+      shell: sh
+      run: |
+        cd src/api/services && npm install
+        cd ../../api/petTravelCompanions && npm install
+        cd ../../api/flights && npm install

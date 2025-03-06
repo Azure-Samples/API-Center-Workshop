@@ -1,47 +1,45 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/javascript-node
 {
-  "name": "Workshop",
+	"name": "Node.js",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye",
+	"features": {
+		"ghcr.io/devcontainers/features/azure-cli:1": {},
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {},
+		"ghcr.io/rchaganti/vsc-devcontainer-features/azurebicep:1": {},
+		"ghcr.io/azure/azure-dev/azd:0": {},
+		"ghcr.io/devcontainers-extra/features/live-server:1": {}
+	},
 
-  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-  // Alternatives images:
-  // - python:3.11-bullseye
-  // - dotnet:6.0-bullseye
-  // - javascript-node:20-bullseye
-  // - java:21-bullseye
-  "image": "mcr.microsoft.com/devcontainers/javascript-node:20-bullseye",
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
 
-  // Features to add to the dev container. More info: https://containers.dev/features.
-  "features": {
-    "ghcr.io/devcontainers/features/azure-cli:1": {
-      "version": "latest",
-      "installBicep": true
-    },
-    "ghcr.io/devcontainers/features/github-cli:1": {},
-    "ghcr.io/azure/azure-dev/azd:latest": {}
-  },
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
 
-  // Configure tool-specific properties.
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "yarn install",
+
+	// Configure tool-specific properties.
   "customizations": {
+    "codespaces": {
+      "openFiles": [
+        "README.md"
+      ]
+    },
     "vscode": {
       "extensions": [
         "ms-azuretools.azure-dev",
-        "ms-azuretools.vscode-bicep"
+        "ms-azuretools.vscode-bicep",
+        "ms-vscode.typescript-language-features",
+        "ms-azuretools.vscode-azure-github-copilot",
+        "ms-azuretools.vscode-docker",
+        "GitHub.Copilot"
       ]
     }
-  },
+  }
 
-  // Use 'forwardPorts' to make a list of ports inside the container available locally.
-  "forwardPorts": [],
-
-  // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "npm install -g @moaw/cli",
-
-  // Set minimal host requirements for the container.
-  // "hostRequirements": {
-  //   "memory": "8gb"
-  // }
-
-  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-  // "remoteUser": "root"
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
 }

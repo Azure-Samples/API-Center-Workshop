@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         try {
-            const response = await fetch('https://contoso-airlines-services.azurewebsites.net//services');
+            const response = await fetch('/api/services');
             // const response = await fetch('http://localhost:8080/services');
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);

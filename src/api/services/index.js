@@ -100,7 +100,7 @@ fastify.register(fastifySwaggerUi, {
 });
 
 // Define the Services Endpoint to fetch all airline services
-fastify.get('/services', {
+fastify.get('/api/services', {
     schema: {
         tags: ['services'],
         description: 'Get all airline services',

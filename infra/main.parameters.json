@@ -18,7 +18,7 @@
       "value": "${AZURE_STORAGE_ACCOUNT}"
     },
     "webappLocation": {
-      "value": "${AZURE_WEBAPP_LOCATION=eastus2}"
+      "value": "${AZURE_WEBAPP_LOCATION=westeurope}"
     },
     "logAnalyticsName": {
       "value": "${AZURE_LOG_ANALYTICS=log-analytics}"
