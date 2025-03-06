@@ -12,6 +12,7 @@ const config: Config = {
   baseUrl: '/',
   organizationName: 'Azure-Samples', // Usually your GitHub org/user name.
   projectName: 'API-Center-Workshop', // Usually your repo name.
+  deploymentBranch: 'main',
   trailingSlash: false,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
