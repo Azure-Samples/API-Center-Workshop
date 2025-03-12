@@ -12,7 +12,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-blue?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](LICENSE)
 
-:star: If you like this sample, star it on GitHub — it helps a l
+:star: If you like this sample, star it on GitHub — it helps a lot!
 
 ![Animation showing filtering through APIs in API Center](./docs/static/img/manage-apis-through-properties.gif)
 
