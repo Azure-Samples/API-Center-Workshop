@@ -45,7 +45,7 @@ To run this sample, you first need to provision the Azure resources needed and d
 Open a terminal and run the following command to download the project code:
 
 ```shell
-azd init -t [TODO]
+azd init -t Azure-Samples/API-Center-Workshop
 ```
 
 > [!NOTE]
