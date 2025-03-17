@@ -26,8 +26,10 @@ This workshop gives you a comprehensive understanding of how to enhance the API 
 ## Overview
 API Management is a broad term encompassing various aspects of managing APIs, and this workshop highlights a new service on Azure, Azure API Center, that concentrates on API registration (inventory) and design-time governance, helping you maintain a structured API inventory and ensuring your APIs meet organizational standards from the design phase.
 
+### Contoso Architecture
+
 <div align="center">
-  <img src="./docs/static/img/architecture.jpg" alt="Application architecture" width="640px" />
+  <img src="./docs/static/img/architecture.png" alt="Application architecture" width="640px" />
 </div>
 
 **Contoso Airlines** is a fictional airline company that offers a variety of services to its customers. The company has:

@@ -1,6 +1,6 @@
 # The Architecture
 
-![Architecturue](/img/architecture.jpg)
+![Architecturue](/img/architecture.png)
 
 This application is made from multiple components:
 - **Frontend (Azure Static Web Apps):**
