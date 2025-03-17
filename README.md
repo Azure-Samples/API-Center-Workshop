@@ -42,6 +42,9 @@ API Management is a broad term encompassing various aspects of managing APIs, an
 
 To run this sample, you first need to provision the Azure resources needed and deploy the sample.
 
+> [!NOTE]
+> Start Docker Desktop (install it if not already installed)
+
 Open a terminal and run the following command to download the project code:
 
 ```shell
@@ -83,6 +86,13 @@ Package and deploy the app to Azure:
 
 ```shell
 azd package
+```
+```shell
+docker login -u USERNAME
+```
+Paste your docker password when prompted
+
+```shell
 azd deploy
 ```
 

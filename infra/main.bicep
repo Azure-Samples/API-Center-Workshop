@@ -9,6 +9,11 @@ param resourceGroupName string = 'rg-${environmentName}'
 
 @minLength(1)
 @description('Primary location for all resources')
+@metadata({
+  azd: {
+    type: 'location'
+  }
+})
 param location string
 
 param staticWebAppName string = 'website'
@@ -18,15 +23,6 @@ param containerName string = 'flightsapi'
 
 @description('Id of the user or app to assign application roles')
 param principalId string = ''
-
-@description('Location for the Static Web App')
-@allowed(['westus2', 'centralus', 'eastus2', 'westeurope', 'eastasia', 'eastasiastage'])
-@metadata({
-  azd: {
-    type: 'location'
-  }
-})
-param webappLocation string // Set in main.parameters.json
 
 // ---------------------------------------------------------------------------
 // Common variables
@@ -92,7 +88,7 @@ module site 'br/public:avm/res/web/static-site:0.7.0' = {
   scope: rg
   params: {
     name: staticWebAppName
-    location: webappLocation
+    location: location
     sku: 'Standard'
     tags: union(tags, { 'azd-service-name': staticWebAppName })
     provider: 'Custom'

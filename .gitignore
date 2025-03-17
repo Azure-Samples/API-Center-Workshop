@@ -16,9 +16,12 @@ lerna-debug.log*
 # Deployment
 *.env
 .azure
+__azurite_db_*
 
 # DB Storage
 .qdrant/
+__blobstorage__
+__queuestorage__
 
 # OS
 .DS_Store
