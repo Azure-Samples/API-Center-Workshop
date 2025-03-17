@@ -1,11 +1,11 @@
 # Deploy to Azure
 
-To run this sample, you first need to provision the Azure resources needed and deploy the sample.
+To run this sample, you first need to provision the Azure resources needed and deploy the sample. **Start Docker Desktop** (install it if not already installed)
 
 Open a terminal and run the following command to download the project code:
 
 ```shell
-azd init -t [TODO]
+azd init -t Azure-Samples/API-Center-Workshop
 ```
 
 :::tip[Note]
@@ -47,6 +47,13 @@ Package and deploy the app to Azure:
 
 ```shell
 azd package
+```
+```shell
+docker login -u USERNAME
+```
+Paste your docker password when prompted
+
+```shell
 azd deploy
 ```
 

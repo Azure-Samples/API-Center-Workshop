@@ -10,4 +10,4 @@ However, organizations struggling to adapt to this API proliferation, face three
 
     ![API Sprawl](/img/api-sprawl.png)
 
-Slides _[Coming soon …]_
+<!-- Slides _[Coming soon …]_ -->

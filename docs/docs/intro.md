@@ -26,13 +26,13 @@ You will learn how to:
 1. Monitor and analyze API compliance
 1. Discover and consume APIs
 
-## Cost to complete workshop
+<!-- ## Cost to complete workshop
 
 _[Coming soon …]_
 
 ## Contributors
 
-Slides _[Coming soon …]_
+Slides _[Coming soon …]_ -->
 
 ## Trademarks
 
