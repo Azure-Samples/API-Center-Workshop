@@ -9,10 +9,10 @@ const config: Config = {
   tagline: 'Streamline API Development, Governance, Discovery & Consumption with API Center',
   favicon: 'img/logo.svg',
   url: 'https://Azure-Samples.github.io',
-  baseUrl: '/',
+  baseUrl: '/API-Center-Workshop/', // Usually your repo name.
   organizationName: 'Azure-Samples', // Usually your GitHub org/user name.
   projectName: 'API-Center-Workshop', // Usually your repo name.
-  deploymentBranch: 'main',
+  deploymentBranch: 'gh-pages',
   trailingSlash: false,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -31,6 +31,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
+          path: 'docs',
         },
         blog: false,
         theme: {
