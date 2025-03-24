@@ -40,7 +40,7 @@ API Management is a broad term encompassing various aspects of managing APIs, an
 - A flights GraphQL API hosted on [Azure Container Apps](https://learn.microsoft.com/en-us/azure/container-apps/overview)
 - An API Inventory managed by [Azure API Center](https://learn.microsoft.com/en-us/azure/api-center/overview)
 
-## Deploy to Azure
+<!-- ## Deploy to Azure
 
 To run this sample, you first need to provision the Azure resources needed and deploy the sample.
 
@@ -98,11 +98,11 @@ Paste your docker password when prompted
 azd deploy
 ```
 
-After the application has been successfully deployed you will see a few URLs printed to the console. Click on the `service website Endpoint` to interact with the website in your browser.
+After the application has been successfully deployed you will see a few URLs printed to the console. Click on the `service website Endpoint` to interact with the website in your browser. 
 
 <div align="center">
   <img src="./docs/static/img/website-endpoint.png" alt="Website endpoint url example" width="640px" />
-</div>
+</div> -->
 
 > [!NOTE]
-> Head over to 🔗 https://aka.ms/APICenter/Workshop to continue with the workshop.
+> Head over to 🔗 https://aka.ms/APICenter/Workshop to begin the workshop.

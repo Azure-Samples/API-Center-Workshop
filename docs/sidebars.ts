@@ -34,7 +34,7 @@ const sidebars: SidebarsConfig = {
      items: [
       'develop/setup',
       // 'develop/run-locally',
-      'develop/deploy',
+      // 'develop/deploy',
       {
         type: 'category',
         label: 'API Inventory',
